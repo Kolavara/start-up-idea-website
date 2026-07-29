@@ -205,21 +205,21 @@ export default function Navbar() {
               className="relative w-10 h-10 flex items-center justify-center z-50"
               aria-label="Toggle menu"
             >
-              <div className="relative w-5 h-4">
+              <div className="relative w-6 h-5">
                 <motion.span
                   animate={isOpen ? { top: '50%', y: '-50%', rotate: 45 } : { top: 0, y: 0, rotate: 0 }}
                   transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-                  className={`absolute left-0 w-full h-[1.5px] origin-center transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
+                  className={`absolute left-0 w-full h-[2px] origin-center transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
                 />
                 <motion.span
                   animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                   transition={{ duration: 0.3 }}
-                  className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1.5px] transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
+                  className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
                 />
                 <motion.span
                   animate={isOpen ? { top: '50%', y: '-50%', rotate: -45 } : { bottom: 0, top: 'auto', y: 0, rotate: 0 }}
                   transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-                  className={`absolute left-0 w-full h-[1.5px] origin-center transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
+                  className={`absolute left-0 w-full h-[2px] origin-center transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
                 />
               </div>
             </button>
