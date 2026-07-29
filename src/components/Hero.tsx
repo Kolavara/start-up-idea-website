@@ -136,15 +136,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6, ease }}
-            className="flex items-center gap-8 mt-14 pt-8 border-t border-white/10"
+            className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mt-14 pt-8 border-t border-white/10 w-full max-w-2xl mx-auto"
           >
             {[
               { value: '500+', label: 'Local Buddies' },
               { value: '48', label: 'Cities' },
               { value: '4.9★', label: 'Avg Rating' },
             ].map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-8">
-                {i > 0 && <div className="w-px h-10 bg-white/10" />}
+              <div key={stat.label} className="flex items-center gap-6 md:gap-8">
+                {i > 0 && <div className="hidden sm:block w-px h-10 bg-white/10" />}
                 <div>
                   <span className="block text-xl md:text-2xl font-display text-white">{stat.value}</span>
                   <span className="text-[10px] text-white/40 tracking-wider uppercase">{stat.label}</span>
