@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --cream: #F5EDE0;
+  --sage: #9CAF88;
+  --espresso: #3C2415;
+  --sand: #DDD0BC;
+  --terracotta: #C4704F;
+  --charcoal: #2D2D2D;
+  --linen: #F5F0EB;
+  --ivory: #FAF8F4;
+
+  /* Semantic tokens */
+  --bg-primary: var(--cream);
+  --bg-secondary: #ffffff;
+  --bg-elevated: #ffffff;
+  --text-primary: var(--espresso);
+  --text-secondary: var(--charcoal);
+  --text-muted: rgba(45, 45, 45, 0.45);
+  --border-primary: var(--sand);
+  --border-subtle: rgba(221, 208, 188, 0.35);
+  --nav-bg: rgba(245, 237, 224, 0.8);
+}
+
+.dark {
+  --cream: #1a1410;
+  --sage: #9CAF88;
+  --espresso: #F5EDE0;
+  --sand: #2a221a;
+  --terracotta: #C4704F;
+  --charcoal: #E8E0D4;
+  --linen: #151110;
+  --ivory: #0f0c0a;
+
+  /* Semantic tokens — dark */
+  --bg-primary: #0f0c0a;
+  --bg-secondary: #1a1410;
+  --bg-elevated: #221b14;
+  --text-primary: #F5EDE0;
+  --text-secondary: #E8E0D4;
+  --text-muted: rgba(245, 237, 224, 0.45);
+  --border-primary: #2a221a;
+  --border-subtle: rgba(42, 34, 26, 0.6);
+  --nav-bg: rgba(15, 12, 10, 0.85);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background-color 0.5s cubic-bezier(0.32, 0.72, 0, 1),
+              color 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Noise texture overlay — fixed, pointer-events-none, z-50 per skill Section 6 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(156, 175, 136, 0.25);
+  color: var(--text-primary);
+}
+
+/* Parallax drift for hero background */
+@keyframes drift {
+  0%, 100% { transform: scale(1.12) translate(0, 0); }
+  50% { transform: scale(1.15) translate(-1%, -0.5%); }
+}
+.hero-drift {
+  animation: drift 20s ease-in-out infinite;
+}
+
+/* Decorative quote mark */
+.decorative-quote {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--terracotta);
+  opacity: 0.06;
+  position: absolute;
+  top: -2rem;
+  left: 1.5rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+@layer components {
+  /* Double-Bezel card architecture — outer shell + inner core */
+  .double-bezel {
+    position: relative;
+    border-radius: 2rem;
+    padding: 6px;
+    background: rgba(232, 223, 208, 0.35);
+    border: 1px solid rgba(232, 223, 208, 0.5);
+  }
+  .double-bezel > .inner-core {
+    border-radius: calc(2rem - 6px);
+    background: var(--bg-primary);
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+  }
+  .dark .double-bezel {
+    background: rgba(42, 34, 26, 0.4);
+    border-color: rgba(42, 34, 26, 0.6);
+  }
+
+  /* Eyebrow pill tag */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-[0.2em] font-semibold;
+    background: rgba(60, 36, 21, 0.04);
+    border: 1px solid rgba(60, 36, 21, 0.08);
+    color: rgba(60, 36, 21, 0.45);
+  }
+  .dark .eyebrow {
+    background: rgba(245, 237, 224, 0.06);
+    border-color: rgba(245, 237, 224, 0.08);
+    color: rgba(245, 237, 224, 0.45);
+  }
+
+  /* Button-in-Button trailing icon */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium overflow-hidden;
+    background: var(--espresso);
+    color: var(--cream);
+    transition: all 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 12px 40px rgba(60, 36, 21, 0.25);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  .dark .btn-primary {
+    background: var(--cream);
+    color: var(--espresso);
+  }
+  .dark .btn-primary:hover {
+    box-shadow: 0 12px 40px rgba(245, 237, 224, 0.1);
+  }
+  .btn-primary .btn-icon {
+    @apply relative z-10 w-8 h-8 rounded-full flex items-center justify-center;
+    background: rgba(253, 251, 247, 0.15);
+    transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .dark .btn-primary .btn-icon {
+    background: rgba(60, 36, 21, 0.15);
+  }
+  .btn-primary:hover .btn-icon {
+    transform: translate(2px, -2px);
+  }
+  .btn-primary .btn-fill {
+    @apply absolute inset-0;
+    background: var(--terracotta);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .btn-primary:hover .btn-fill {
+    transform: translateY(0);
+  }
+
+  /* Ghost / outline button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-4 rounded-full font-medium transition-all duration-300;
+    border: 1px solid rgba(60, 36, 21, 0.12);
+    color: rgba(60, 36, 21, 0.65);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(60, 36, 21, 0.25);
+    color: var(--espresso);
+  }
+  .dark .btn-ghost {
+    border-color: rgba(245, 237, 224, 0.12);
+    color: rgba(245, 237, 224, 0.65);
+  }
+  .dark .btn-ghost:hover {
+    border-color: rgba(245, 237, 224, 0.25);
+    color: var(--cream);
+  }
+
+  /* Dark mode section overrides */
+  .dark .section-white {
+    background-color: var(--bg-secondary) !important;
+  }
+  .dark .card-light {
+    background-color: var(--bg-elevated) !important;
+    border-color: var(--border-subtle) !important;
+  }
+  .dark .card-light:hover {
+    border-color: var(--border-primary) !important;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  }
+}
