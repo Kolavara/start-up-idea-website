@@ -165,10 +165,7 @@ body::before {
   .btn-primary:active {
     transform: scale(0.98);
   }
-  .dark .btn-primary {
-    background: var(--cream);
-    color: var(--espresso);
-  }
+  /* Dark mode relies on the flipped CSS variables, no override needed */
   .dark .btn-primary:hover {
     box-shadow: 0 12px 40px rgba(245, 237, 224, 0.1);
   }
@@ -186,7 +183,7 @@ body::before {
   .btn-primary .btn-fill {
     @apply absolute inset-0;
     background: var(--terracotta);
-    transform: translateY(100%);
+    transform: translateY(102%);
     transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
   }
   .btn-primary:hover .btn-fill {
