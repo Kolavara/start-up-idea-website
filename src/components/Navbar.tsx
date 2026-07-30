@@ -397,26 +397,26 @@ export default function Navbar() {
             <ThemeToggle isDark={isDark} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative w-10 h-10 flex items-center justify-center z-50"
+              className={`relative flex items-center gap-2 px-3 py-2 rounded-full z-50 transition-colors ${
+                isDark ? 'hover:bg-sand/20 text-cream' : 'hover:bg-sand/30 text-espresso'
+              }`}
               aria-label="Toggle menu"
             >
-              <div className="relative w-6 h-5">
-                <motion.span
-                  animate={isOpen ? { top: '50%', y: '-50%', rotate: 45 } : { top: 0, y: 0, rotate: 0 }}
-                  transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-                  className={`absolute left-0 w-full h-[2px] origin-center transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
-                />
-                <motion.span
-                  animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
-                />
-                <motion.span
-                  animate={isOpen ? { top: '50%', y: '-50%', rotate: -45 } : { bottom: 0, top: 'auto', y: 0, rotate: 0 }}
-                  transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-                  className={`absolute left-0 w-full h-[2px] origin-center transition-colors duration-300 ${isDark ? 'bg-cream' : 'bg-espresso'}`}
-                />
-              </div>
+              <span className="text-sm font-medium">Menu</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {isOpen ? (
+                  <>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </>
+                ) : (
+                  <>
+                    <line x1="4" y1="12" x2="20" y2="12" />
+                    <line x1="4" y1="6" x2="20" y2="6" />
+                    <line x1="4" y1="18" x2="20" y2="18" />
+                  </>
+                )}
+              </svg>
             </button>
           </div>
         </div>
