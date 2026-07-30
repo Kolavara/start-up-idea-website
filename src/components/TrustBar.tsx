@@ -35,7 +35,7 @@ export default function TrustBar() {
         style={{
           background: isDark
             ? 'linear-gradient(180deg, rgba(15,12,10,1) 0%, transparent 100%)'
-            : 'linear-gradient(180deg, rgba(21,17,16,1) 0%, transparent 100%)',
+            : 'none',
         }}
       />
 
