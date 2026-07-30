@@ -383,7 +383,7 @@ export default function Navbar() {
               items={joinItems}
               isDark={isDark}
               pathname={pathname}
-              align="right"
+              align="left"
             />
           </div>
 
