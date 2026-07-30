@@ -13,31 +13,24 @@ export default function Footer() {
     {
       title: 'For Travelers',
       links: [
-        { label: 'Find a Buddy', href: '/guides' },
+        { label: 'Find a Certified Guide', href: '/search/guides' },
+        { label: 'Find a Local Companion', href: '/search/companions' },
         { label: 'How It Works', href: '#how-it-works', isHash: true },
-        { label: 'Destinations', href: '#' },
-        { label: 'Experiences', href: '#' },
-        { label: 'Gift Cards', href: '#' },
       ],
     },
     {
-      title: 'For Guides',
+      title: 'For Providers',
       links: [
-        { label: 'Apply Now', href: '#guides', isHash: true },
-        { label: 'Pricing', href: '#pricing', isHash: true },
-        { label: 'Guide Resources', href: '#' },
-        { label: 'Success Stories', href: '#' },
-        { label: 'Guide Blog', href: '#' },
+        { label: 'Apply as a Certified Guide', href: '/become-a-guide' },
+        { label: 'Apply as a Local Companion', href: '/become-a-companion' },
+        { label: 'Guide Pricing', href: '/become-a-guide#pricing' },
       ],
     },
     {
       title: 'Company',
       links: [
         { label: 'About Us', href: '#' },
-        { label: 'Careers', href: '#' },
-        { label: 'Press', href: '#' },
-        { label: 'Contact', href: '#' },
-        { label: 'Partners', href: '#' },
+        { label: 'Contact', href: 'mailto:hello@yoourguide.com' },
       ],
     },
   ]
@@ -59,7 +52,7 @@ export default function Footer() {
               <span className="font-display text-lg text-cream">Yoourguide</span>
             </Link>
             <p className="text-sm text-cream/30 leading-relaxed max-w-xs mb-6">
-              Connecting travelers with passionate local guides across India. Experience the real India through the eyes of those who love it most.
+              Connecting travelers with Certified Guides and Local Companions across India. Experience the real India through the eyes of those who love it most.
             </p>
             <div className="flex gap-3">
               {[

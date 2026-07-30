@@ -36,23 +36,23 @@ export default function Features() {
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
           <Reveal>
             <span className="eyebrow mb-6 inline-flex">
-              For Travelers
+              What You&apos;ll Discover
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className={`font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.08] tracking-[-0.01em] mb-6 transition-colors duration-300 ${
               isDark ? 'text-cream' : 'text-espresso'
             }`}>
-              See the India
+              The India
               <br />
-              that guidebooks miss.
+              that lives beyond the map.
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className={`text-base leading-relaxed max-w-md mx-auto transition-colors duration-300 ${
               isDark ? 'text-cream/40' : 'text-charcoal/45'
             }`}>
-              Your local buddy reveals the layers of culture, flavor, and soul that make every city extraordinary.
+              Whether with a Certified Guide or a Local Companion, every experience reveals the layers of culture, flavor, and soul that make every city extraordinary.
             </p>
           </Reveal>
         </div>

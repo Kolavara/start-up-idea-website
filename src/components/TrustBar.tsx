@@ -31,7 +31,7 @@ export default function TrustBar() {
     }`}>
       {/* Top gradient — blends from hero's dark bottom into this section */}
       <div
-        className="absolute inset-x-0 top-0 h-24 pointer-events-none"
+        className="absolute inset-x-0 top-0 h-48 pointer-events-none"
         style={{
           background: isDark
             ? 'linear-gradient(180deg, rgba(15,12,10,1) 0%, transparent 100%)'

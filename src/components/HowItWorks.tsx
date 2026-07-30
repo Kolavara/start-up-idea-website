@@ -12,9 +12,9 @@ const steps = [
         <path d="M21 21l-4.35-4.35" />
       </svg>
     ),
-    label: 'Discover',
-    title: 'Find Your Perfect Buddy',
-    description: 'Browse verified local guides by city, specialty, and reviews. Each profile tells their unique story.',
+    label: 'Choose',
+    title: 'Pick Your Path',
+    description: 'Decide between a Certified Guide for deep history or a Local Companion for authentic cultural immersion — or book both!',
   },
   {
     icon: (
@@ -26,8 +26,8 @@ const steps = [
       </svg>
     ),
     label: 'Connect',
-    title: 'Book Your Experience',
-    description: 'Message your guide, share what you love, and co-create an experience that\'s uniquely yours.',
+    title: 'Meet Your Local Expert',
+    description: 'Message your guide or companion, share what excites you, and co-create a day that\'s uniquely yours.',
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const steps = [
     ),
     label: 'Experience',
     title: 'Feel the Real India',
-    description: 'Step beyond monuments into living culture. Hidden alleys, untold stories, genuine connection.',
+    description: 'Explore majestic monuments or dive into living culture — hidden alleys, street food, untold stories, and genuine connection.',
   },
 ]
 
@@ -67,10 +67,10 @@ export default function HowItWorks() {
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className={`text-lg leading-relaxed transition-colors duration-300 ${
-              isDark ? 'text-cream/45' : 'text-charcoal/45'
+            <p className={`text-base leading-relaxed max-w-md mx-auto transition-colors duration-300 ${
+              isDark ? 'text-cream/40' : 'text-charcoal/45'
             }`}>
-              No rigid itineraries. No tourist traps. Just genuine experiences crafted by people who love their city.
+              Pick a Certified Guide for structured history tours, or a Local Companion for unscripted adventures. No rigid itineraries, no tourist traps.
             </p>
           </Reveal>
         </div>

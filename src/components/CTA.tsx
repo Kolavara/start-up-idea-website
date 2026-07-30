@@ -2,14 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Reveal } from './Motion'
-import { usePathname, useRouter } from 'next/navigation'
-import { createScrollHandler } from '@/lib/scroll'
+import { useRouter } from 'next/navigation'
 import { useTheme } from './ThemeProvider'
 
 export default function CTA() {
-  const pathname = usePathname()
   const router = useRouter()
-  const scrollToHash = createScrollHandler(pathname, router.push)
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 
@@ -62,19 +59,19 @@ export default function CTA() {
           <p className={`text-lg max-w-xl mx-auto mb-12 leading-relaxed transition-colors duration-300 ${
             isDark ? 'text-cream/40' : 'text-charcoal/45'
           }`}>
-            Skip the tourist traps. Find your local buddy and discover the India that lives beyond the guidebooks.
+            Whether you&apos;re drawn to ancient history or the raw pulse of everyday life — your perfect India is waiting. Choose your path and start exploring.
           </p>
         </Reveal>
 
         <Reveal delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.button
-              onClick={() => router.push('/guides')}
+              onClick={() => router.push('/search/guides')}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="btn-primary"
             >
-              <span className="relative z-10">Find Your Local Buddy</span>
+              <span className="relative z-10">Find Your Experience</span>
               <span className="btn-icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cream">
                   <path d="M7 17L17 7M17 7H7M17 7V17" />
@@ -84,7 +81,7 @@ export default function CTA() {
             </motion.button>
 
             <motion.button
-              onClick={() => scrollToHash('#guides')}
+              onClick={() => router.push('/search/companions')}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className={`inline-flex items-center gap-2 px-6 py-4 rounded-full font-medium transition-all duration-300 border ${
@@ -93,7 +90,7 @@ export default function CTA() {
                   : 'border-espresso/10 text-espresso/70 hover:border-espresso/30 hover:text-espresso'
               }`}
             >
-              Become a Guide
+              Browse Local Companions
             </motion.button>
           </div>
         </Reveal>
