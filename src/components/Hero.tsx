@@ -88,7 +88,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 32, filter: 'blur(4px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.5, delay: 0.4, ease }}
-            className="text-lg md:text-xl font-medium text-terracotta max-w-[580px] leading-relaxed mb-4 drop-shadow-xl [text-shadow:_-1px_-1px_0_rgba(0,0,0,0.8),_1px_-1px_0_rgba(0,0,0,0.8),_-1px_1px_0_rgba(0,0,0,0.8),_1px_1px_0_rgba(0,0,0,0.8)]"
+            className="text-lg md:text-xl font-medium text-terracotta max-w-[580px] leading-relaxed mb-4"
           >
             Explore India&apos;s majestic history with Govt. Certified Guides, or feel the heartbeat of the streets with passionate Local Companions.
           </motion.p>
